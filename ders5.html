@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>HOŞGELDİNİZ</h3>
+
+    <label style="background-color:tomato">iSİM</label>
+    <input type="text" id="data1"/><br><br>
+    <label style="background-color:tomato">SOYİSİM</label>
+    <input type="text" id="data2"/><br><br>
+    <button type="button" onclick="veriSakla()">Veri Sakla</button>
+    <button type="button" onclick="veriGetir()">Veri Getir</button><br><br><br>
+
+    <p id="isim">İSİM
+
+    </p>
+    <p id="soyisim">SOYİSİM
+
+    </p>
+
+    <h3>LOKASYON</h3>
+    <label style="background-color:tomato">LOKASYON BİLGİMİ GETİR</label>
+   
+
+
+        <br>
+
+        <p id= "lokasyon" >...</p>
+        <button type="button" onclick="konumuSakla()">Veri Sakla</button>
+        <button type="button" onclick="konumuGetir()">Veri Getir</button><br><br><br>
+    
+
+
+
+    <script>
+        function veriSakla() {
+            var data = document.getElementById("data1").value;
+            localStorage.setItem('data1',data);
+            var data = document.getElementById("data2").value;
+            localStorage.setItem('data2',data);
+
+        }
+        function veriGetir() {
+            document.getElementById("isim").innerHTML ="İSİM: +" 
+            +localStorage.getItem("data1")
+            document.getElementById("soyisim").innerHTML ="SOYİSİM: +" 
+            +localStorage.getItem("data2")
+        }
+
+
+        var lokasyon = document.getElementById("lokasyon");
+
+                function lokasyonAl() 
+                {
+                    if(navigator.geolocation)
+                    {
+                        navigator.geolocation.getCurrentPosition(showPosition);
+                    }
+                    else
+                    {
+                        lokasyon.innerHTML ="Sen Uçmuşsun";
+
+                    }
+
+                    
+                }
+
+                function showPosition(position) 
+                {
+                    lokasyon.innerHTML ="Enlem " + posiion.coords.latitude + "<br> Boylam:" + posiion.coords.longitude;
+                }
+
+                
+                function konumuSakla() {
+            var data = document.getElementById("lokasyon").value;
+            localStorage.setItem('lokasyon',data);
+            
+
+        }
+        function konumuGetir() {
+            document.getElementById("lokasyon").innerHTML ="LOKASYONUNUZ: +" 
+            +localStorage.getItem("lokasyon")
+           
+        }
+
+    </script>
+
+    
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Hafızaya Veri Kaydetme</h3>
+    <input type="text" id="data"/>
+    <button type="button" onclick="veriSakla()">Veri Sakla</button><br><br><br>
+    <button type="button" onclick="veriGetir()">Veri Getir</button><br><br><br>
+
+    <p id="veri">Birazdan Görüşürüz
+
+    </p>
+
+    <script>
+        function veriSakla() {
+            var data = document.getElementById("data").value;
+            localStorage.setItem('data',data);
+
+        }
+        function veriGetir() {
+            document.getElementById("veri").innerHTML ="İki kişinin bildiği sır değildir.Değer: +" 
+            +localStorage.getItem("data")
+
+        }
+    </script>
+
+<h2>Ders4</h2>
+<h3><a href="index.html">ANASAYFA</a></h3>
+<h3><a href="ders1.html">DERS1</a></h3>
+<h3><a href="ders2.html">DERS2</a></h3>
+<h3><a href="ders3.html">DERS3</a></h3>
+<h3><a href="ders4.html">DERS4</a></h3>
+
+</body>
+</html>

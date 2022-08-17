@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Ders2</h2>
+        <h3><a href="index.html">ANASAYFA</a></h3>
+        <h3><a href="ders1.html">DERS1</a></h3>
+        <h3><a href="ders2.html">DERS2</a></h3>
+        <h3><a href="ders3.html">DERS3</a></h3>
+        <h3><a href="ders4.html">DERS4</a></h3>
+
+        <canvas id="canvas" width="200" height="100" style=" border:1px  solid black;">
+        </canvas>
+    
+        <script>
+    
+            var c=document.getElementById("canvas");
+            var ctx= c.getContext("2d");
+    
+            ctx.moveTo(0,0);
+            ctx.lineTo(80,40);
+            ctx.stroke();
+            
+            
+    
+            ctx.font="22px Arial";
+            ctx.fillText("H",100,50);
+    
+    
+    
+            
+            ctx.beginPath();
+            ctx.arc(100,50,25,0,2*Math.PI);
+            ctx.stroke();
+            
+    
+           
+    
+           
+            
+    
+    
+            
+    
+        </script>
+</body>
+</html>
